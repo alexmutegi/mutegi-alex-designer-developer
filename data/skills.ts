@@ -1,0 +1,1 @@
+export const skills = ["Next.js","React","TypeScript","JavaScript","Node.js","API integration","PostgreSQL","Payment integration","System architecture","UI/UX","Branding","SEO"] as const;
