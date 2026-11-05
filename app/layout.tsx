@@ -2,16 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Mutegi Alex | Designer & Developer",
-  description:
-    "Mutegi Alex is a designer and developer specializing in system architecture, web development, branding, payments, automation, APIs, digital marketing and SEO.",
-  metadataBase: new URL("https://example.com")
+  title: { default: "Mutegi Alex | Designer & Developer", template: "%s | Mutegi Alex" },
+  description: "Mutegi Alex is a designer and developer creating digital systems, websites, brands, integrations and practical digital products.",
+  metadataBase: new URL("https://mutegialex.com"),
+  alternates: { canonical: "/" },
+  openGraph: { title: "Mutegi Alex | Designer & Developer", description: "Digital design, development, systems, branding and integrations.", type: "website", locale: "en_KE" },
+  twitter: { card: "summary_large_image", title: "Mutegi Alex | Designer & Developer", description: "Digital design, development, systems, branding and integrations." }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+  return <html lang="en"><body>{children}</body></html>;
 }
