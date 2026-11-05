@@ -1,0 +1,1 @@
+export const services = ["System design & architecture","Web development","Graphics design & branding","Payment integrations","Process automation","API & system integration","Digital marketing","Marketing plans","Brand strategy","Web design & SEO"] as const;
