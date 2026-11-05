@@ -8,6 +8,7 @@ Professional portfolio website for Mutegi Alex.
 - React
 - TypeScript
 - Tailwind CSS
+- Resend for transactional contact email
 
 ## Current experience
 
@@ -17,7 +18,8 @@ Professional portfolio website for Mutegi Alex.
 - Selected client projects with development status
 - Partners / collaboration section
 - Professional contact section
-- WhatsApp project enquiry form
+- Server-side contact email API
+- WhatsApp contact link
 - Phone and social contact links
 - Responsive typography and layout
 - Keyboard focus states and reduced-motion support
@@ -32,21 +34,48 @@ npm run dev
 
 Then open http://localhost:3000.
 
-## Environment
+## Email configuration
 
-Copy `.env.example` to `.env.local` and configure integration values when backend services are added.
+The contact form uses a server-side Next.js Route Handler and Resend.
 
-## Contact form
+Create a local environment file from the example:
 
-The current enquiry form intentionally opens WhatsApp with the visitor's project details. This means the portfolio has a working contact path without pretending that an email backend is already configured.
+```bash
+cp .env.example .env.local
+```
 
-A future backend can add:
+Then set:
 
-- Email delivery
-- Database storage for enquiries
-- Spam protection / rate limiting
-- Automated acknowledgement emails
-- Admin enquiry management
+```env
+RESEND_API_KEY=your_resend_api_key
+CONTACT_EMAIL=ev200420232012@gmail.com
+```
+
+For production, configure the same private variables in your hosting provider. Do not commit the API key to GitHub.
+
+For production email delivery, verify the domain you want to send from in Resend and set:
+
+```env
+CONTACT_FROM_EMAIL=Mutegi Alex <hello@mutegialex.com>
+```
+
+Until a sending domain is verified, the API route uses Resend's test sender.
+
+## Production deployment
+
+Recommended deployment target: Vercel.
+
+1. Push the repository to GitHub.
+2. Import the repository into Vercel.
+3. Set the production environment variables:
+   - `RESEND_API_KEY`
+   - `CONTACT_EMAIL`
+   - `CONTACT_FROM_EMAIL` after domain verification
+   - `NEXT_PUBLIC_SITE_URL`
+4. Deploy.
+5. Test the live contact form.
+6. Add the custom domain and confirm HTTPS.
+7. Re-test navigation, WhatsApp, social links, sitemap and robots.
 
 ## Roadmap
 
@@ -54,6 +83,6 @@ A future backend can add:
 2. Real project content and media
 3. Professional contact and mobile experience
 4. Email/API contact backend
-5. CMS/admin functionality
-6. SEO and analytics
-7. Production deployment
+5. Domain verification and production deployment
+6. CMS/admin functionality
+7. SEO and analytics
