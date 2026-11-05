@@ -1,6 +1,6 @@
 export const projects = [
-  { slug: "electroduction", number: "01", title: "Electroduction", category: "Digital Product", description: "A digital project focused on delivering a clear, modern online experience." },
-  { slug: "vickers-cottage", number: "02", title: "Vickers Cottage", category: "Travel & Accommodation", description: "A hospitality website designed to present the property, communicate its offering and support booking enquiries." },
-  { slug: "jamie-interior-design", number: "03", title: "Jamie Interior Design", category: "Interior Design & Branding", description: "A visual-first website concept for showcasing interior design work, style and services." },
-  { slug: "elgrande", number: "04", title: "El Grande", category: "Digital Brand & Platform", description: "A digital brand and product project developed around a strong identity and practical online experience." }
+  { slug: "electroduction", number: "01", title: "Electroduction", category: "Digital Product", status: "Live / deployed", description: "A client project currently deployed and available as a live digital experience." },
+  { slug: "vickers-cottage", number: "02", title: "Vickers Cottage", category: "Travel & Accommodation", status: "In development", description: "A client hospitality website currently being developed for a professional accommodation and booking-focused online presence." },
+  { slug: "jamie-interior-design", number: "03", title: "Jamie Interior Design", category: "Interior Design & Branding", status: "In development", description: "A client project currently in development, focused on presenting interior design work, services and brand identity." },
+  { slug: "elgrande", number: "04", title: "El Grande", category: "Digital Brand & Platform", status: "In development", description: "A client project currently in development around a strong digital identity and practical online experience." }
 ] as const;
